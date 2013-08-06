@@ -46,7 +46,8 @@
     [self.tabbar setViewControllers:[NSArray arrayWithObject:mainNav]];
     
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor redColor];
+    //アニメーションの際の下地の色とか
+    self.window.backgroundColor = [UIColor clearColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

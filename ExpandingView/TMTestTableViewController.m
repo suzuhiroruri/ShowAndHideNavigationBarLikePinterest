@@ -94,12 +94,14 @@
 
 #pragma mark - Table view data source
 
+//セクション数の指定
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+//セクション内のセルの数の指定
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -145,12 +147,13 @@
 {
     if(hidden)
         return;
-    
     hidden = YES;
     
+    //TabBarをアニメーション化して隠す
     [self.tabBarController setTabBarHidden:YES 
                                   animated:YES];
     
+    //NavigationBarをアニメーション化して隠す
     [self.navigationController setNavigationBarHidden:YES 
                                              animated:YES];
 }
@@ -160,12 +163,13 @@
 {
     if(!hidden)
         return;
-    
     hidden = NO;
     
+    //TabBarをアニメーション化して表示する
     [self.tabBarController setTabBarHidden:NO 
                                   animated:YES];
     
+    //NavigationBarをアニメーション化して表示する
     [self.navigationController setNavigationBarHidden:NO 
                                              animated:YES];
 }
@@ -180,6 +184,7 @@
     startContentOffset = lastContentOffset = scrollView.contentOffset.y;
     //NSLog(@"scrollViewWillBeginDragging: %f", scrollView.contentOffset.y);
 }
+
 //スクロール検知
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView 
 {
@@ -189,21 +194,24 @@
     lastContentOffset = currentOffset;
     
     
-    
+    //もし上スクロールなら
     if((differenceFromStart) < 0)
     {
         // scroll up
         if(scrollView.isTracking && (abs(differenceFromLast)>1))
+            //NavigationBarとTabBarを隠すメソッドを呼び出す
             [self expand];
     }
-    
+    //もし下スクロールなら
     else {
         if(scrollView.isTracking && (abs(differenceFromLast)>1))
+            //NavigationBarとTabBarを表示するメソッドを呼び出す
             [self contract];
     }
     
 }
 
+//スクロール終了
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
 }
@@ -213,8 +221,10 @@
 }
 
 
+//最上部ならば
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
 {
+    //NavigationBarとTabBarを表示するメソッドを呼び出す
     [self contract];
     return YES;
 }

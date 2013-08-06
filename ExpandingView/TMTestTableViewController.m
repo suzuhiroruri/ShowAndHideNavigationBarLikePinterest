@@ -77,16 +77,14 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:hidden 
-    animated:YES];
+    [self.navigationController setNavigationBarHidden:hidden animated:YES];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.tabBarController setTabBarHidden:hidden 
-                                  animated:NO];
+    [self.tabBarController setTabBarHidden:hidden animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -137,12 +135,12 @@
     
     TMPostDetailViewController * pdvc = [[TMPostDetailViewController alloc] init];
     
-    [self.navigationController pushViewController:pdvc 
-                                         animated:YES];
+    [self.navigationController pushViewController:pdvc animated:YES];
 }
 
 #pragma mark - The Magic!
 
+//NavigationBarとTabBarを非表示にするためのメソッド
 -(void)expand
 {
     if(hidden)
@@ -157,6 +155,7 @@
                                              animated:YES];
 }
 
+//NavigationBarとTabBarの再表示のためのメソッド
 -(void)contract
 {
     if(!hidden)
@@ -170,16 +169,18 @@
     [self.navigationController setNavigationBarHidden:NO 
                                              animated:YES];
 }
+ 
 
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
 
+//スクロール検知の開始
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     startContentOffset = lastContentOffset = scrollView.contentOffset.y;
     //NSLog(@"scrollViewWillBeginDragging: %f", scrollView.contentOffset.y);
 }
-
+//スクロール検知
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView 
 {
     CGFloat currentOffset = scrollView.contentOffset.y;
@@ -195,6 +196,7 @@
         if(scrollView.isTracking && (abs(differenceFromLast)>1))
             [self expand];
     }
+    
     else {
         if(scrollView.isTracking && (abs(differenceFromLast)>1))
             [self contract];
@@ -209,6 +211,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
 }
+
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
 {

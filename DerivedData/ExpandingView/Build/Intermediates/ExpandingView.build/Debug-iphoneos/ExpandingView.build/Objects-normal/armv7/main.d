@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/newsuzukihiromasa/Desktop/cocos2dx/ExpandingView-master/ExpandingView/main.m \
-  /Users/newsuzukihiromasa/Desktop/cocos2dx/ExpandingView-master/ExpandingView/TMAppDelegate.h
+  /Users/newsuzukihiromasa/git/ios/ShowAndHideNavigationBarLikePinterest/ExpandingView/main.m \
+  /Users/newsuzukihiromasa/git/ios/ShowAndHideNavigationBarLikePinterest/ExpandingView/TMAppDelegate.h

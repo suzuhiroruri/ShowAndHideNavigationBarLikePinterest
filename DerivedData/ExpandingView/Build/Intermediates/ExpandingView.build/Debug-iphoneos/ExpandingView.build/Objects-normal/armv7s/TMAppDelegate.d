@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/newsuzukihiromasa/Desktop/cocos2dx/ExpandingView-master/ExpandingView/TMAppDelegate.m \
-  /Users/newsuzukihiromasa/Desktop/cocos2dx/ExpandingView-master/ExpandingView/TMAppDelegate.h \
-  /Users/newsuzukihiromasa/Desktop/cocos2dx/ExpandingView-master/ExpandingView/TMTestTableViewController.h
+  /Users/newsuzukihiromasa/git/ios/ShowAndHideNavigationBarLikePinterest/ExpandingView/TMAppDelegate.m \
+  /Users/newsuzukihiromasa/git/ios/ShowAndHideNavigationBarLikePinterest/ExpandingView/TMAppDelegate.h \
+  /Users/newsuzukihiromasa/git/ios/ShowAndHideNavigationBarLikePinterest/ExpandingView/TMTestTableViewController.h

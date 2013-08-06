@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>FoundWorkingCopyPaths</key>
-	<array/>
+	<array>
+		<string>/Users/newsuzukihiromasa/git/ios/ShowAndHideNavigationBarLikePinterest</string>
+	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2013-08-06T08:30:30Z</date>
+	<date>2013-08-06T08:59:03Z</date>
 	<key>MissingFilePaths</key>
 	<array/>
 	<key>Version</key>

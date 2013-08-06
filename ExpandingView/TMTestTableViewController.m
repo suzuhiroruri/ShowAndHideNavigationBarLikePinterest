@@ -47,6 +47,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
         //NavigationBarのタイトル指定
         self.title = NSLocalizedString(@"SOCIAL APP!", @"");
         hidden = NO;
@@ -77,7 +78,7 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:hidden 
-                                             animated:YES];
+    animated:YES];
     
 }
 
